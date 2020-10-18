@@ -5,6 +5,8 @@ This Python program utilized four daemon threads to gather local temperature and
 
 The local temperature and humidity would be compared to the information retrieved by the CIMIS data most local to your location on an hourly basis. The difference in the measurements would be used to linearly regress the ETo measurement provided by CIMIS, a constant used in determining how much water is needed for [x] amount of water that is needed to properly irrigate the land. This more localized measurement of weather would yield more accurate measurements for how much water needed to be used, which saved me 21 gallons of water on one hot day in June 2020 (for about a 100 x 100 ft space). 
 
+Please click on the YouTube link for a demo of the project: https://www.youtube.com/watch?v=cLY--wSxsos
+
 # Technologies Used #
 The Python program was ran on a Raspberry Pi, which was connected to a breadboard which connected the Pi's pins to the Temperature/Humidity sensor, the Infrared Sensor, and the LCD Display. Wires were used to connect the pins of the sensors to the appropriate pins of the Pi. The information retrieved was then converted to a format more favorable for programming with the help of the FreeNove and Adafruit libraries. The Pi needed to be connected to the sensors and to a power source the whole time, as the program was loaded onto the board and left to run for hours on end as it was self sustainable. It would get hourly measurements from the CIMIS station, and updates on the temperature/humidity every 5-10 minutes, and be updating the LCD display and monitoring the Infrared (IR) sensor constantly. The IR sensor was connected to a relay which would pause the watering process if any movement was detected in the area. 
 
